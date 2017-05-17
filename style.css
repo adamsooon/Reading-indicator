@@ -1,0 +1,45 @@
+body {
+    background: #0e65e5;
+}
+
+
+article {
+    font-size: 3em;
+    padding: 15px;
+    width: 80%;
+    margin: 0 auto;
+    border-top: 3px solid #c0c0c0;
+    border-bottom: 3px solid #c0c0c0;
+    color: white;
+
+}
+
+.articleProgress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #0e65e5;
+}
+
+.articleProgress::-webkit-progress-bar {
+    background-color: #0e65e5;
+    border-radius: 2px;
+}
+
+.articleProgress::-moz-progress-bar {
+    background-color: #0e65e5;
+    border-radius: 2px;
+}
+
+.articleProgress::-webkit-progress-value {
+    background: #34b399;
+    transition: 0.3s width linear;
+}
+
+.articleProgress::-moz-progress-value {
+    background: #34b399;
+    transition: 0.3s width linear;
+}
