@@ -17,13 +17,22 @@
     progress.value = window.scrollY - article.offsetTop;
   };
 
+  const progressVisibile = () => {
+    if(progress.value > 0 &&  progress.value < progress.max) {
+      progress.classList.add('is-active');
+    } else {
+      progress.classList.remove('is-active');
+    }
+  }
+
   const throttle = (callback, limit) => {
-    const wait = false;
+    let wait = false;
     return () => {
       if (!wait) {
         callback();
         wait = true;
         setTimeout( () => {
+          progressVisibile();
           wait = false;
       }, limit);
       }
@@ -33,12 +42,10 @@
   const debounce = (callback, time) => {
     var timeout;
     return () => {
-      // var context = this,
-      // args = arguments;
-      // console.log(context, args)
       clearTimeout(timeout);
       timeout = setTimeout( () => {
           callback();
+          progressVisibile();
     }, time || 200);
     };
   };
@@ -46,6 +53,7 @@
   const resizeWindow = () => {
     getProgress();
     progress.max = maxScroll();
+    progressVisibile();
   }
 
   window.addEventListener('scroll', throttle(getProgress, 100));

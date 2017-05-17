@@ -21,7 +21,13 @@ article {
     margin: 0;
     padding: 0;
     width: 100%;
+    opacity: 0;
     background-color: #0e65e5;
+    transition: 0.3s opacity linear;
+}
+
+.articleProgress.is-active {
+    opacity: 1;
 }
 
 .articleProgress::-webkit-progress-bar {
