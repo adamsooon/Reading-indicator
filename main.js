@@ -1,5 +1,5 @@
 (function () {
-  var article = document.querySelector('article'),
+  const article = document.querySelector('article'),
     windowHeight = window.innerHeight,
     articleHeight = () =>
   article.clientHeight,
@@ -13,12 +13,12 @@
 
   article.appendChild(progress);
 
-  var getProgress = () => {
+  const getProgress = () => {
     progress.value = window.scrollY - article.offsetTop;
   };
 
-  var throttle = (callback, limit) => {
-    var wait = false;
+  const throttle = (callback, limit) => {
+    const wait = false;
     return () => {
       if (!wait) {
         callback();
@@ -30,7 +30,7 @@
     };
   };
 
-  var debounce = (callback, time) => {
+  const debounce = (callback, time) => {
     var timeout;
     return () => {
       // var context = this,
@@ -43,7 +43,7 @@
     };
   };
 
-  var resizeWindow = () => {
+  const resizeWindow = () => {
     getProgress();
     progress.max = maxScroll();
   }
